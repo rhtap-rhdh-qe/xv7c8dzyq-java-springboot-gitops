@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  tssc/gitops: xv7c8dzyq-java-springboot 
+  janus-idp.io/tekton: xv7c8dzyq-java-springboot
+  backstage.io/kubernetes-id: xv7c8dzyq-java-springboot
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: xv7c8dzyq-java-springboot
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
